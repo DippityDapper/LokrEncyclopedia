@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>LokrEncyclopedia</AssemblyName>
+    <RootNamespace>LokrEncyclopedia</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Private=false: don't copy LokrModAPI.dll into this plugin's own output folder — it's
+         already deployed separately to BepInEx/plugins/LokrModAPI/. Two copies loaded from two
+         plugin folders would be two separate assembly identities, breaking the shared ModAPI
+         static state every plugin depends on. -->
+    <ProjectReference Include="..\LokrModAPI\LokrModAPI.csproj" Private="false" />
+  </ItemGroup>
+
+</Project>
